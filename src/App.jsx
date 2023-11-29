@@ -3,12 +3,33 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+//  react router dom 
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  Route,
+  RouterProvider
+} from "react-router-dom";
+
+//  pages 
+import Registration from './pages/Registration';
+
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route
+        path="/"
+        element={<Registration />}
+      >
+        </Route>
+     
+    )
+  );
 
   return (
     <>
-      
+     <RouterProvider router={router} />
     </>
   )
 }
